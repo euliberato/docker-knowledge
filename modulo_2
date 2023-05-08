@@ -1,0 +1,79 @@
+O que são containers? 
+
+É um "pacote" de código que pode executar uma ação,
+ou seja, os projetos serão executados dentro dos containers
+
+Os containers utilizam imagens, os containers não rodam sem uma imagem
+A imagem é como se fosse o projeto, o container é a execução desse projeto
+
+===== || =====
+
+Ordem de execução:
+1) Programa-se uma imagem
+2) Executa-se a imagem através de um container
+
+===== || =====
+
+Exemplo de container:
+sudo docker run ubuntu
+
+Rodar sem interromper:
+sudo docker run -it ubuntu
+
+===== || ======
+
+Como ver os containers que estão executando?
+sudo docker ps
+sudo docker container ls
+
+Como ver os que já foram executados?
+sudo docker ps -a
+
+===== || ======
+
+Container x Virtual Machine, qual a diferença?
+Container é uma solução isolada para resolver um problema, não possui um SO
+integrado. VM possui um sistema operacional próprio e executa diversas atividades ao mesmo tempo.
+
+===== || ====== 
+
+Executar container em background?
+utiliza-se a flag -d (detached), o terminal dessa forma, é liberado
+
+Exemplo: sudo docker run nginx
+Essa solução serve para que o container não ocupe o terminal.
+
+===== || ======
+
+Como expor portas?
+através da flag -p (port)
+
+Exemplo: sudo docker run -d -p 80:80 nginx
+Dessa forma, o container do docker fica exporto para o mundo externo
+
+Saída:
+1° Coloquei "localhost" no browser
+2° Página home do nginx apareceu
+
+Depois parei o container usando: sudo docker stop {nome_do_container}
+
+===== || ======
+
+Como reiniciar um container? 
+através do: sudo docker star {id_do_container}
+observação: o comando sudo docker run, sempre cria um NOVO container.
+
+===== || ======
+
+Como definir um nome para o container?
+através da flag: --name
+
+exemplo: sudo docker run -d -p 80:80 --name {nome_do_container}
+
+===== || ======
+
+Como remover/apagar container?
+
+através da flag -rm
+exemplo: sudo docker rm {nome_ou_id_do_container}
+opcional: flag -f para forçar a remoção
