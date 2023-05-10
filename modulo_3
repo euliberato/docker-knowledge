@@ -1,0 +1,85 @@
+O que são imagens?
+
+São arquivos programados, o Docker cria uma estrutura
+que executa determinadas ações em containers
+
+Uma imagem contém: imagem base, diretório base,
+comandos, porta da aplicação, etc...
+
+Uma imagem executa as instruções em camadas, quais?
+FROM, WORKDIR, EXPOSE, COPY, RUN (são os principais)
+
+===== || =====
+
+Criando um mini-projeto em ExpressJS para demonstrar.
+Foi criado uma pasta do módulo 3 que contém o projeto.
+
+O foco, será o dockerfile que irá pegar o projeto e irá criar uma imagem.
+
+===== || ===== 
+
+Falando um pouco sobre o dockerfile:
+FROM node: #o node será a imagem base para o projeto ExpressJS
+
+WORKDIR /app: #esse diretorio /app será a raiz da aplicação, para onde o projeto será levado
+
+RUN npm install: #comando que será executado para rodar os pacotes
+
+COPY . . : #será responsável por copiar os arquivos da raiz e colocar em /app
+
+CMD ["node", "app.js"]: #será o comando executado no terminal para iniciar a aplicação ExpressJS
+
+===== || =====
+
+É possível rodar vários containers com a mesma imagem e as aplicações
+irão rodar em paralelo, basta definir uma porta diferente para cada
+container e colocar nomes sugestivos
+
+===== || =====
+
+Como nomear imagens no build?
+através da flag: docker tag {id_da_imagem} {novo_nome_da_imagem}
+
+é possível também atribuir uma tag a imagem com:
+docker tag {id_da_imagem} {nome_da_imagem} : {tag_da_imagem}
+
+===== || =====
+
+Como remover as imagens/container não utilizados?
+para fazer essa limpeza, basta fazer um: docker system prune
+
+===== || =====
+
+Como copiar arquivos entre containers?
+Usando o: docker cp, pode ser usado para copiar
+um arquivo de um diretório para um container
+
+Exemplo: docker cp express:/app/app.js ./copia/
+Sintaxe: docker cp {nome_container}:/{diretorio_pasta/arquivo} {pasta_destino}
+
+===== || =====
+
+Como analisar containers?
+alguns comandos são recomendadosa para analisar dados sobre o container
+
+exemplo: docker top {nome_do_container}
+exemplo: docker inspect {nome_do_container}
+exemplo: docker stats {nome_container}
+
+===== || =====
+
+Como logar no docker hub?
+comando: docker login, depois digitar user e password e também existe o: docker logout.
+isso é necessário para subir as imagens para o repositório de imagens da minha conta.
+
+===== || =====
+
+Como enviar imagens p/ o docker hub?
+comando: docker push {nome_usuario}/{nome_repositorio} | o nome da imagem deve seguir esse padrão |
+
+É necessário criar um repositório no docker hub
+
+Como atualizar a imagem?
+comando: docke push {nome_usuario}/{nome_repositorio}:{nova_imagem} | esse padrão substitui uma imagem pela outra |
+
+E para rodar a imagem: docker pull {nome_usuario}/{nome_repositorio}
