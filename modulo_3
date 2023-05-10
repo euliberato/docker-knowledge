@@ -20,9 +20,13 @@ O foco, será o dockerfile que irá pegar o projeto e irá criar uma imagem.
 
 Falando um pouco sobre o dockerfile:
 FROM node: #o node será a imagem base para o projeto ExpressJS
+
 WORKDIR /app: #esse diretorio /app será a raiz da aplicação, para onde o projeto será levado
+
 RUN npm install: #comando que será executado para rodar os pacotes
+
 COPY . . : #será responsável por copiar os arquivos da raiz e colocar em /app
+
 CMD ["node", "app.js"]: #será o comando executado no terminal para iniciar a aplicação ExpressJS
 
 ===== || =====
