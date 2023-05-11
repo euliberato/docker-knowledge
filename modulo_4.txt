@@ -19,3 +19,28 @@ Qual problema os volumes resolve? para persistir dados!!
 
 ===== || =====
 
+Como criar volume anônimo?
+docker run {outros_parametros} -v /data
+
+Como criar um volume nomeado?
+docker run {outros_parametros} -v {nome_do_volume}:/{pasta_do_workdir}
+
+obs: o diretorio onde será salvou o volume terá que ser o mesmo
+workdir da imagem
+
+e...
+
+no volume nomeado eu consigo ter acesso a um mesmo volume
+utilizando aplicações em portas diferentes, uma espécie de
+comunicação entre containers
+
+Como criar um volume bind mount?
+docker run {outros_parametros} /dir/data:/data
+
+exemplo: docker run -d -p 80:80 --name {nome_container} -v {caminho_relativo_da_pasta_onde_sera_guardado_dados}:{caminho_do_workdir} {nome_da_imagem}
+
+O bind mount possui outra utilidade:
+atualizar em tempo real a aplicação! ou seja, não é necessario
+fazer o build a cada alteração.
+
+
