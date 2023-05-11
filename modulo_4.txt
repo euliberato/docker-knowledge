@@ -43,4 +43,31 @@ O bind mount possui outra utilidade:
 atualizar em tempo real a aplicação! ou seja, não é necessario
 fazer o build a cada alteração.
 
+==== || ====
 
+Como criar um volume manualmene? (sem o -v)
+comando: docker volume create {nome_do_volume}
+
+Esse volume será um named volume, e poderá ter um container
+associado a execução.
+
+===== || =====
+
+Como chegar volumes? 
+comando: docker volume inspect {nome_do_volume}
+
+===== || =====
+
+Como remover um volume?
+comando: docker volume rm {nome_do_volume}
+
+ou...
+
+docker volume prune
+
+===== || =====
+
+Existe volume apenas de leitura?
+sim, comando: -v volume:/{diretorio}:ro
+
+===== || =====
