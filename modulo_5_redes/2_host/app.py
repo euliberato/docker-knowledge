@@ -11,7 +11,6 @@ app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
 app.config['MYSQL__DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
 app.config['MYSQL_DATABASE_DB'] = 'flaskhost'
-app.config['MYSQL_DATA_UNIX_SOCKET'] = 'none'
 
 mysql = MySQL(app)
 
