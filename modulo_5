@@ -1,0 +1,50 @@
+Como conectar um container ao outro?
+
+Através das networks. É uma forma de gerenciar
+conexão no Docker, de um container para outra plataforma
+ou entre containers mesmo. 
+
+As redes são estruturas a parte, criadas separadas
+do container e tem seus proprios comandos.
+
+===== || =====
+
+Tipos de conexão:
+Externa: conexão com API Externa
+Host: comunicação com máquina que roda o Docker
+Entre containers: comunicação que utiliza o driver bridge, permite vários containers
+
+===== || =====
+
+Tipos de rede (drivers)
+Bridge, Host, MacVLAN, none, Plugins
+
+Bridge: padrão do Docker, conexão entre containers
+Host: conexão entre container e host
+MacVLAN: container com endereço MAC
+None: remove a rede de um container
+Plugins: permite extensão de terceiros
+
+===== || =====
+
+Como listar networks?
+comando: docker network ls
+
+===== || =====
+
+Como criar uma rede?
+comando: docker network create {nome_da_rede}, por padrão será bridge.
+macvlan: docker network create -d {driver_da_rede} {nome_da_rede}
+
+===== || ===== 
+
+Como remover uma rede?
+
+comando: docker network rm {nome_da_rede}
+a rede não irá existir mais e os containers já conectados
+irão desconectar.
+
+removendo em massa: docker network prune
+
+===== || =====
+
