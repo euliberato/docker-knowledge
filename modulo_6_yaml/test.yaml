@@ -1,0 +1,34 @@
+nome: "Ruan"
+idade: 20
+
+objeto:
+  versao: 2
+  arquivo: "teste.txt"
+  
+# esse é um comentario em yaml
+
+dado_numerico: 12
+dado_float: 15.8
+
+texto_yaml: Texto sem aspas é valido
+texto_yaml2: "Texto com aspas é valido"
+
+valor_vazio: null
+valor_vazio2: ~
+
+booleano_verdadeiro: True
+booleano_verdadeiro2: On
+
+booleano_falso: False
+booleano_falso2: Off
+
+exemplo_de_array:
+  - 1
+  - 2
+  - 3
+
+exemplo_de_array2: [1, 2, 3, 4, 5]
+
+exemplo_dicionario:
+  chave1: 1
+  chave2: 2

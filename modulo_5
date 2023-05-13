@@ -48,3 +48,9 @@ removendo em massa: docker network prune
 
 ===== || =====
 
+Para a conexão externa, com host e entre vários containers
+foi utilizado um projeto básico em Flask que conecta uma API
+com os respectivos tipos de conexão, foi utilzado também o 
+MySQL
+
+===== || =====

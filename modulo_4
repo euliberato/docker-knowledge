@@ -1,0 +1,73 @@
+O que são volumes?
+
+É uma forma prática de persistir dados em aplicação, sem
+depender do container. Dessa forma, é mais fácil fazer backups
+
+===== || =====
+
+Quais os 03 tipos de volumes?
+Anônimo: diretorio criados pela flag -v, terá um nome aleatório
+
+Nomeados: são volumes criados com nomes 
+
+Bind mounts: uma forma de salvar dados na máquina, sem o gerenciamento
+do docker, será definido um diretório.
+
+===== || =====
+
+Qual problema os volumes resolve? para persistir dados!!
+
+===== || =====
+
+Como criar volume anônimo?
+docker run {outros_parametros} -v /data
+
+Como criar um volume nomeado?
+docker run {outros_parametros} -v {nome_do_volume}:/{pasta_do_workdir}
+
+obs: o diretorio onde será salvou o volume terá que ser o mesmo
+workdir da imagem
+
+e...
+
+no volume nomeado eu consigo ter acesso a um mesmo volume
+utilizando aplicações em portas diferentes, uma espécie de
+comunicação entre containers
+
+Como criar um volume bind mount?
+docker run {outros_parametros} /dir/data:/data
+
+exemplo: docker run -d -p 80:80 --name {nome_container} -v {caminho_relativo_da_pasta_onde_sera_guardado_dados}:{caminho_do_workdir} {nome_da_imagem}
+
+O bind mount possui outra utilidade:
+atualizar em tempo real a aplicação! ou seja, não é necessario
+fazer o build a cada alteração.
+
+==== || ====
+
+Como criar um volume manualmene? (sem o -v)
+comando: docker volume create {nome_do_volume}
+
+Esse volume será um named volume, e poderá ter um container
+associado a execução.
+
+===== || =====
+
+Como chegar volumes? 
+comando: docker volume inspect {nome_do_volume}
+
+===== || =====
+
+Como remover um volume?
+comando: docker volume rm {nome_do_volume}
+
+ou...
+
+docker volume prune
+
+===== || =====
+
+Existe volume apenas de leitura?
+sim, comando: -v volume:/{diretorio}:ro
+
+===== || =====
