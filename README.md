@@ -7,4 +7,5 @@
   <li>Módulo 3: Aprofundando em container e aprendendo imagens</li>
   <li>Módulo 4: Aprendendo sobre volumes</li>
   <li>Módulo 5: Aprendendo sobre conexões</li>
+  <li>Módulo 6: Conhecendo YAML - uma solução para configurações</li>
 </ul>
