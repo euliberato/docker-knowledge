@@ -1,0 +1,10 @@
+O que é Docker Compose?
+
+É uma ferramenta para rodar múltiplos containers,
+uma forma de rodar múltiplos builds e runs.
+
+===== || =====
+
+Como criar o primeiro arquivo compose?
+criar um arquivo: docker-compose.yml
+
