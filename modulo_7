@@ -8,3 +8,46 @@ uma forma de rodar múltiplos builds e runs.
 Como criar o primeiro arquivo compose?
 criar um arquivo: docker-compose.yml
 
+Esse arquivo é responsável por coordenar os containers
+e imagens - Possui chaves de utilização.
+
+Chaves:
+version: versão do compose
+services: containers/servicos que vão rodar na aplicação
+volumes: possível adição de volumes
+
+===== || =====
+
+Depois de criar o arquivo docker-compose.yaml (basta monta-lo corretamente)
+e rodar o comando: docker compose up
+
+Apos isso, se dermos um docker ps, iremos ver que existe 2 containers: MySQL e Wordpress
+
+===== || =====
+
+Como rodar em modo detached?
+com o comando: docker compose up -d
+
+e...
+
+como parar o compose em detache?
+docker compose down
+
+===== || =====
+
+Como adicionar variáveis de ambiente?
+definindo um arquivo base em env_file
+existem variáveis em que a sintaxe é ${nome_da_variavel}
+
+Essa técnica também serve para evitar compartilhamento
+de dados sensíveis, exemplo: senhas...
+
+ambiente = environment
+
+Dessa forma a área enviroment no docker-compose pode ser substitúida pelo diretório do arquivo .env
+
+===== || =====
+
+Como definir redes no compose?
+por padrão é uma bridge entre os containers
+
